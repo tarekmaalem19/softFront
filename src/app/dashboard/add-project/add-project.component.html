@@ -1,0 +1,69 @@
+<div class="col-md-6">
+    <div class="wrapper fadeInDown">
+        <div id="formContent" style="padding: 30px;">
+            <form [formGroup]="projectForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">title</label>
+                    <input type="title" class="form-control fadeIn second" formControlName="title" placeholder="Enter title">
+                    <div *ngIf="f['title'].touched && f['title'].invalid">
+                        <small class="form-text text-muted" *ngIf="f['title'].errors && f['title'].errors['required']">
+                            Please enter title.!
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputdescription1">description</label>
+                    <input type="text" class="form-control fadeIn third" formControlName="description"
+                        placeholder="description">
+                    <div *ngIf="f['description'].touched && f['description'].invalid">
+                        <small class="form-text text-muted"
+                            *ngIf="f['description'].errors && f['description'].errors['required']">
+                            Please enter description.!
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputdescription1">Status</label>
+                    <select class="form-control" formControlName="status" aria-label="Default select example">
+                        <option selected>Open this select status</option>
+                        <option value="0">In progress</option>
+                        <option value="1">Done</option>
+                        <option value="2">Blocked</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputdescription1">Tasks Number</label>
+                    <input type="number" class="form-control fadeIn third" formControlName="tasksNumber"
+                        placeholder="tasksNumber">
+                    <div *ngIf="f['tasksNumber'].touched && f['tasksNumber'].invalid">
+                        <small class="form-text text-muted"
+                            *ngIf="f['tasksNumber'].errors && f['tasksNumber'].errors['required']">
+                            Please enter tasksNumber.!
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputdescription1">File Name</label>
+                    <input type="text" class="form-control fadeIn third" formControlName="fileName" placeholder="fileName">
+                    <div *ngIf="f['fileName'].touched && f['fileName'].invalid">
+                        <small class="form-text text-muted"
+                            *ngIf="f['fileName'].errors && f['fileName'].errors['required']">
+                            Please enter fileName.!
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputdescription1">Image</label>
+                    <input type="text" class="form-control"  formControlName="path" placeholder="path">
+                    <div *ngIf="f['path'].touched && f['path'].invalid">
+                        <small class="form-text text-muted"
+                            *ngIf="f['path'].errors && f['path'].errors['required']">
+                            Please enter path to file.!
+                        </small>
+                    </div>
+                </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!projectForm.valid">Submit</button>
+        </form>
+    </div>
+    </div>
+</div>

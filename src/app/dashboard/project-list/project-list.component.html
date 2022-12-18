@@ -1,0 +1,42 @@
+<div class="container" style="padding: 50px;">
+  <div class="row">
+    <div class="col-md-2">
+      <a routerLink="/dashboard/projects/add" class="btn btn-primary">Add new Project</a>
+
+    </div>
+    <div class="col-md-10">
+      <app-filter (finalList)=onListAdd($event)></app-filter>
+    </div>
+  </div>
+   <!-- Card -->
+  <div >
+    <div class="row" >
+        <div class="col-md-4" *ngFor="let item of list.projects">
+
+            <div class="card" style="width:300px">
+
+                <!-- Card image -->
+                <img class="card-img-top" width="300px" [src] = "item.path" alt="Card image cap">
+              
+                <!-- Card content -->
+                <div class="card-body">
+              
+                  <!-- Title -->
+                  <h2>Number of tasks <span class="badge badge-secondary">{{item.tasksNumber}}</span>  <br><span class="badge badge-danger">{{item.status}}</span></h2>
+
+                  <h4 class="card-title"><a>{{item.title}}</a></h4>
+                  <!-- Text -->
+                  <p class="card-text">{{item.description}}</p>
+                  <!-- Button -->
+                  <a href="#" class="btn btn-danger" style="margin-right:20px;">Delete</a> 
+                  <a href="#" class="btn btn-primary">Edit</a>
+
+                </div>
+              
+              </div>
+        </div>
+    </div>
+
+  </div>
+
+</div>

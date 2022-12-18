@@ -1,0 +1,19 @@
+<div class="row" style="margin-bottom: 30px;">
+    <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+        <div class="col-md-3">
+            <select class="form-control" formControlName="status" aria-label="Default select example">
+                <option selected>Open this select status</option>
+                <option value="0">In progress</option>
+                <option value="1">Done</option>
+                <option value="2">Blocked</option>
+              </select>
+        </div>
+        <div class="col-md-3" >
+            <input type="text" class="form-control" formControlName="title" placeholder="Enter title">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" formControlName="filteName" placeholder="Enter filteName">
+        </div>
+        <button class="btn btn-primary" type="submit">search</button>
+    </form>
+</div>
